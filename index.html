@@ -206,6 +206,21 @@ section{padding-block:88px}
 .review figcaption b{display:block;color:var(--ink);font-size:15px}
 @media (max-width:900px){.reviews{grid-template-columns:1fr}}
 
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+.faq h2{font-size:clamp(32px,4.4vw,54px);margin-top:12px}
+.faq .intro p{color:var(--muted);margin:16px 0 0}
+.faq-list{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--line);color:var(--red);font:600 20px/1 var(--body);transition:background .15s,color .15s}
+.faq details[open] summary::after{content:"−";background:var(--red);border-color:var(--red);color:var(--on-red)}
+.faq summary:hover{color:var(--red)}
+.faq details p{margin:0 0 20px;color:var(--muted);max-width:44em}
+.faq details a{color:var(--red);font-weight:600}
+@media (max-width:860px){.faq{grid-template-columns:1fr;gap:20px}}
+
 /* Contact */
 .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
 .coords dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:16px 24px}
@@ -228,6 +243,94 @@ footer b{color:var(--ink)}
 footer .credits{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 footer .credits a{color:inherit}
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Entretenez-vous les voitures d'autres marques que Citroën ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Nous entretenons et réparons les véhicules thermiques de toutes marques, voitures particulières comme utilitaires légers : vidange, freins, pneus, distribution, climatisation, diagnostic…"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Est-ce que je perds la garantie constructeur si je ne vais pas chez ma marque ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Non. La réglementation européenne vous permet de faire entretenir votre voiture par le garage de votre choix sans perdre la garantie constructeur, à condition de respecter le programme d'entretien prévu par le constructeur."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Entretenez-vous les voitures électriques ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui pour les modèles électriques Citroën, que nous entretenons en tant que réparateur agréé. Pour les voitures électriques d'autres marques, appelez-nous pour en parler."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Mon assurance me propose un autre garage. Puis-je quand même venir chez vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Vous avez le libre choix du réparateur : l'expert de votre assurance vient au garage et la prise en charge se fait de la même façon. Voir comment ça se passe."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Puis-je avoir une voiture pendant les réparations ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, un véhicule de courtoisie peut vous être prêté pendant l'intervention. Pensez à le réserver en prenant rendez-vous."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Ma voiture est en panne, que faire ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Appelez-nous au 04 67 84 09 24 : nous assurons le dépannage."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Faut-il prendre rendez-vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "C'est préférable pour l'atelier, afin de vous recevoir sans attente et de réserver un véhicule de courtoisie si besoin. Appelez le 04 67 84 09 24 ou utilisez le formulaire de contact."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Puis-je attendre sur place ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, pour une intervention courte comme une vidange. Notre espace d'attente a des fauteuils, une machine à café et un coin enfants. Le parking est devant le garage, avec une place réservée aux personnes handicapées."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Qu'est-ce qu'une campagne de modernisation Citroën ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Citroën organise parfois des opérations sur certains modèles : mise à jour d'un logiciel, remplacement d'une pièce… Donnez-nous votre immatriculation et nous vérifions si votre voiture est concernée."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Vendez-vous des voitures d'occasion d'autres marques ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. En plus des Citroën neuves, nous vendons des véhicules d'occasion toutes marques. Contactez-nous pour connaître les véhicules disponibles."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -460,6 +563,58 @@ footer .credits a{color:inherit}
           <figcaption><b>Axel B.</b>Avis Google · visite en août 2022</figcaption>
         </figure></li>
       </ul>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap faq">
+      <div class="intro">
+        <span class="kicker">Questions fréquentes</span>
+        <h2>Vos questions</h2>
+        <p>Vous ne trouvez pas la réponse ? Appelez-nous au <a href="tel:+33467840924">04 67 84 09 24</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Entretenez-vous les voitures d'autres marques que Citroën ?</summary>
+          <p>Oui. Nous entretenons et réparons les véhicules thermiques de toutes marques, voitures particulières comme utilitaires légers : vidange, freins, pneus, distribution, climatisation, diagnostic…</p>
+        </details>
+        <details>
+          <summary>Est-ce que je perds la garantie constructeur si je ne vais pas chez ma marque ?</summary>
+          <p>Non. La réglementation européenne vous permet de faire entretenir votre voiture par le garage de votre choix sans perdre la garantie constructeur, à condition de respecter le programme d'entretien prévu par le constructeur.</p>
+        </details>
+        <details>
+          <summary>Entretenez-vous les voitures électriques ?</summary>
+          <p>Oui pour les modèles électriques Citroën, que nous entretenons en tant que réparateur agréé. Pour les voitures électriques d'autres marques, appelez-nous pour en parler.</p>
+        </details>
+        <details>
+          <summary>Mon assurance me propose un autre garage. Puis-je quand même venir chez vous ?</summary>
+          <p>Oui. Vous avez le libre choix du réparateur : l'expert de votre assurance vient au garage et la prise en charge se fait de la même façon. <a href="#carrosserie">Voir comment ça se passe</a>.</p>
+        </details>
+        <details>
+          <summary>Puis-je avoir une voiture pendant les réparations ?</summary>
+          <p>Oui, un véhicule de courtoisie peut vous être prêté pendant l'intervention. Pensez à le réserver en prenant rendez-vous.</p>
+        </details>
+        <details>
+          <summary>Ma voiture est en panne, que faire ?</summary>
+          <p>Appelez-nous au <a href="tel:+33467840924">04 67 84 09 24</a> : nous assurons le dépannage.</p>
+        </details>
+        <details>
+          <summary>Faut-il prendre rendez-vous ?</summary>
+          <p>C'est préférable pour l'atelier, afin de vous recevoir sans attente et de réserver un véhicule de courtoisie si besoin. Appelez le <a href="tel:+33467840924">04 67 84 09 24</a> ou utilisez le <a href="#contact">formulaire de contact</a>.</p>
+        </details>
+        <details>
+          <summary>Puis-je attendre sur place ?</summary>
+          <p>Oui, pour une intervention courte comme une vidange. Notre espace d'attente a des fauteuils, une machine à café et un coin enfants. Le parking est devant le garage, avec une place réservée aux personnes handicapées.</p>
+        </details>
+        <details>
+          <summary>Qu'est-ce qu'une campagne de modernisation Citroën ?</summary>
+          <p>Citroën organise parfois des opérations sur certains modèles : mise à jour d'un logiciel, remplacement d'une pièce… Donnez-nous votre immatriculation et nous vérifions si votre voiture est concernée.</p>
+        </details>
+        <details>
+          <summary>Vendez-vous des voitures d'occasion d'autres marques ?</summary>
+          <p>Oui. En plus des Citroën neuves, nous vendons des véhicules d'occasion toutes marques. Contactez-nous pour connaître les véhicules disponibles.</p>
+        </details>
+      </div>
     </div>
   </section>
 
