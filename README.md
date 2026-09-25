@@ -4,7 +4,8 @@ Site vitrine du garage Citroën St Clément Automobile, 120 avenue de la Clastre
 
 ## Structure
 
-- `index.html` : page unique (HTML + CSS + JS inline)
+- `index.html` : page principale (HTML + CSS + JS inline)
+- `mentions-legales.html` : mentions légales
 - `assets/img/` : logo et photos du garage
 
 ## Aperçu local
@@ -13,8 +14,5 @@ Ouvrir `index.html` dans un navigateur, ou lancer `python3 -m http.server` puis 
 
 ## À faire
 
-- Brancher le formulaire de contact (envoi par email)
-- Confirmer l'heure de fermeture (18h30 ou 18h)
-- Remplacer les photos Wikimedia des modèles par des visuels officiels ou des photos du garage
+- Appliquer la charte Citroën pour le logo et les visuels des modèles (règles imposées par la marque)
 - Logo en SVG ou PNG haute définition
-- Page mentions légales
