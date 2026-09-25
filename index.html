@@ -143,6 +143,7 @@ section{padding-block:88px}
 .svc svg{width:40px;height:40px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
 .svc h3{font-size:24px;margin-bottom:10px}
 .svc p{margin:0 0 12px;color:var(--muted);font-size:16px}
+.svc p a{color:var(--red);font-weight:600;text-decoration:none}
 .svc ul{margin:0;padding:0;list-style:none;font-size:15px}
 .svc li{padding:5px 0;border-top:1px solid var(--line)}
 @media (max-width:1000px){.services{grid-template-columns:repeat(2,1fr)}.svc,.svc+.svc{padding:28px 20px 28px 0}.svc:nth-child(2n){border-right:0;padding-left:20px}.svc:nth-child(3){padding-left:0}}
@@ -162,6 +163,21 @@ section{padding-block:88px}
 .timeline span{font-size:15px;line-height:1.4;display:block}
 @media (max-width:900px){.story{grid-template-columns:1fr}.story .pic{min-height:260px}.story .txt{padding:40px 20px}}
 @media (max-width:480px){.timeline{grid-template-columns:1fr}}
+
+/* Carrosserie */
+.claim{background:var(--soft)}
+.claim .wrap{padding-block:72px}
+.claim .sec-head{margin-bottom:32px}
+.law{display:inline-block;margin-top:12px;font-size:14px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+.steps li{background:var(--bg);padding:24px 22px 26px;border-top:4px solid var(--red);counter-increment:step}
+.steps li::before{content:counter(step,decimal-leading-zero);display:block;font:800 44px/1 var(--display);color:var(--red);margin-bottom:14px}
+.steps h3{font-size:22px;margin-bottom:8px}
+.steps p{margin:0;color:var(--muted);font-size:15px}
+.claim .actions{margin-top:28px;align-items:center}
+.claim .actions span{font-size:15px;color:var(--muted)}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.claim .wrap{padding-block:56px}}
 
 /* Accueil */
 .comfort{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
@@ -223,6 +239,7 @@ footer .credits a{color:inherit}
     <nav class="menu" aria-label="Navigation principale">
       <a href="#gamme">Véhicules</a>
       <a href="#services">Atelier</a>
+      <a href="#carrosserie">Carrosserie</a>
       <a href="#accueil">Accueil</a>
       <a href="#histoire">Le garage</a>
       <a href="#contact">Contact</a>
@@ -350,7 +367,7 @@ footer .credits a{color:inherit}
         </article>
         <article class="svc">
           <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h14v10H14z"/><path d="M21 18v6c0 2-2 3-4 3h-1v13h10V27"/><path d="M34 12c3 2 5 5 5 9"/></svg>
-          <h3>Carrosserie</h3><p>Après un sinistre, vous avez le libre choix du réparateur : l'expert de votre assurance vient au garage et suit les travaux, et vous bénéficiez d'un véhicule de courtoisie.</p>
+          <h3>Carrosserie</h3><p>Remise en état après un accrochage ou un sinistre, avec le libre choix du réparateur. <a href="#carrosserie">Comment ça se passe →</a></p>
           <ul><li>Tôlerie : redressage, remplacement</li><li>Peinture</li><li>Pare-brise</li><li>Optiques</li></ul>
         </article>
         <article class="svc">
@@ -362,7 +379,26 @@ footer .credits a{color:inherit}
     </div>
   </section>
 
-  <section id="accueil" style="padding-top:0">
+  <section id="carrosserie" class="claim" style="padding:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="kicker">Carrosserie après sinistre</span><h2>Votre assurance ne vous impose pas son garage</h2></div>
+        <p>Après un accident, c'est vous qui choisissez le réparateur, même si votre assurance vous en propose un autre. Confiez-nous votre voiture : la prise en charge par l'assurance se fait de la même façon.<br><span class="law">Libre choix du réparateur : article L211-5-1 du Code des assurances.</span></p>
+      </div>
+      <ol class="steps">
+        <li><h3>Vous déclarez le sinistre</h3><p>Prévenez votre assurance et indiquez-lui que vous faites réparer chez St Clément Automobile.</p></li>
+        <li><h3>L'expert vient au garage</h3><p>L'expert mandaté par votre assurance examine votre voiture chez nous et valide les réparations.</p></li>
+        <li><h3>Nous réparons</h3><p>Tôlerie, peinture, pare-brise, optiques : tout est fait dans notre atelier, et l'expert suit les travaux.</p></li>
+        <li><h3>Vous gardez la mobilité</h3><p>Un véhicule de courtoisie vous est prêté pendant les travaux, sur réservation. Les réparations sont prises en charge selon votre contrat.</p></li>
+      </ol>
+      <div class="actions">
+        <a class="btn red" href="#contact" data-subject="Carrosserie">Demander un devis carrosserie</a>
+        <span>ou appelez le <a href="tel:+33467840924">04 67 84 09 24</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="accueil">
     <div class="wrap comfort">
       <div class="cpic"><img loading="lazy" src="assets/img/attente.jpg" alt="Espace d'attente avec fauteuils, machine à café et coin coloriage"></div>
       <div>
@@ -510,6 +546,9 @@ footer .credits a{color:inherit}
         m.hidden=!!b.dataset.f&&m.dataset.tags.split(' ').indexOf(b.dataset.f)<0;
       });
     });
+  });
+  document.querySelectorAll('[data-subject]').forEach(function(a){
+    a.addEventListener('click',function(){document.getElementById('f-subject').value=a.dataset.subject});
   });
   document.querySelectorAll('[data-model]').forEach(function(a){
     a.addEventListener('click',function(){
