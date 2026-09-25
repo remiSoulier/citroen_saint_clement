@@ -13,7 +13,6 @@ Ouvrir `index.html` dans un navigateur, ou lancer `python3 -m http.server` puis 
 
 ## À faire
 
-- Intégrer 3 avis Google réels et la note actuelle
 - Brancher le formulaire de contact (envoi par email)
 - Confirmer l'heure de fermeture (18h30 ou 18h)
 - Remplacer les photos Wikimedia des modèles par des visuels officiels ou des photos du garage
