@@ -192,6 +192,18 @@ section{padding-block:88px}
 @media (max-width:860px){.comfort{grid-template-columns:1fr;gap:28px}}
 @media (max-width:420px){.perks{grid-template-columns:1fr}}
 
+/* Équipe */
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none;margin:0;padding:0}
+.member{border:1px solid var(--line);padding:24px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.member svg{width:40px;height:40px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.member b{font:800 44px/1 var(--display);color:var(--red)}
+.member h3{font-size:22px}
+.member p{margin:0;color:var(--muted);font-size:15px}
+.story .txt p a{color:var(--red);font-weight:600}
+@media (max-width:1000px){.team{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.team{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:380px){.team{grid-template-columns:1fr}}
+
 /* Avis */
 .reviews-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 40px;margin-bottom:28px}
 .reviews-head h2{font-size:clamp(32px,4.4vw,54px);margin-top:12px}
@@ -529,7 +541,7 @@ footer .credits a{color:inherit}
           <h2>Une histoire de famille depuis 1956</h2>
           <p>Le garage familial est créé en 1956 à Montpellier, puis s'installe en 1974 au cœur du village de Saint-Clément-de-Rivière. En 1981, Jean Grabouillat et ses fils deviennent réparateur agréé Citroën, et l'histoire continue depuis.</p>
           <p>Dans notre atelier de mécanique et de carrosserie au nord de Montpellier, nous entretenons les véhicules thermiques de toutes marques ainsi que les modèles électriques Citroën.</p>
-          <p>Aujourd'hui, une équipe de 7 personnes : 3 mécaniciens, 1 apprenti, 1 carrossier-peintre, 1 réceptionnaire et 1 secrétaire.</p>
+          <p>Aujourd'hui, une équipe de 7 personnes vous accueille. <a href="#equipe">Découvrir l'équipe</a></p>
           <ol class="timeline">
             <li><b>1956</b><span>Création du garage à Montpellier</span></li>
             <li><b>1974</b><span>Installation à Saint-Clément-de-Rivière</span></li>
@@ -537,6 +549,22 @@ footer .credits a{color:inherit}
           </ol>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="equipe" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="kicker">L'équipe</span><h2>7 personnes à votre service</h2></div>
+        <p>Une entreprise familiale à taille humaine, de l'atelier à l'accueil.</p>
+      </div>
+      <ul class="team">
+        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M11 37l4-4M33 15l4-4"/></svg><b>3</b><h3>Mécaniciens</h3><p>Entretien, réparation et diagnostic de votre véhicule.</p></li>
+        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18l18-8 18 8-18 8z"/><path d="M14 22v9c0 3 5 6 10 6s10-3 10-6v-9"/><path d="M42 18v10"/></svg><b>1</b><h3>Apprenti</h3><p>Formé chez nous aux métiers de l'atelier.</p></li>
+        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h14v10H14z"/><path d="M21 18v6c0 2-2 3-4 3h-1v13h10V27"/><path d="M34 12c3 2 5 5 5 9"/></svg><b>1</b><h3>Carrossier-peintre</h3><p>Tôlerie, redressage et peinture.</p></li>
+        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="7"/><path d="M10 40c0-8 6-13 14-13s14 5 14 13"/><path d="M8 40h32"/></svg><b>1</b><h3>Réceptionnaire</h3><p>Vous accueille et organise les interventions.</p></li>
+        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="2"/><path d="M16 16h16M16 23h16M16 30h10"/></svg><b>1</b><h3>Secrétaire</h3><p>Rendez-vous, devis et suivi administratif.</p></li>
+      </ul>
     </div>
   </section>
 
