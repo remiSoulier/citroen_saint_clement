@@ -69,29 +69,23 @@ nav.menu a:hover{border-color:var(--red)}
 @media (max-width:700px){.hero .photo img{object-position:40% 60%}.hero .wrap{min-height:560px}}
 
 /* Barre infos */
-.infobar{background:var(--soft)}
-.infobar .hoursCard{display:grid;grid-template-columns:auto 1fr auto;gap:12px 40px;align-items:center;background:transparent;border-top:0;padding:22px 0}
-.infobar .hoursCard .hd{margin:0;flex-direction:column;align-items:flex-start;gap:6px}
-.infobar .hours{width:auto}
-.infobar .hours tbody{display:flex;flex-wrap:wrap;gap:4px 22px}
-.infobar .hours tr{display:flex;gap:8px;font-size:14px}
-.infobar .hours td{border:0;padding:4px 0}
-.infobar .hours tr.today td:first-child{padding-left:8px}
-.infobar address{margin:0;max-width:16em}
-@media (max-width:980px){.infobar .hoursCard{grid-template-columns:1fr;gap:14px}}
-/* Carte horaires */
-.hoursCard{background:var(--bg);color:var(--ink);padding:24px 24px 20px;border-top:5px solid var(--red)}
-.hoursCard .hd{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
-.hoursCard h2{font-size:22px}
+.infobar{background:var(--soft);border-bottom:1px solid var(--line)}
+.info{display:grid;grid-template-columns:auto 1fr 1fr 1.2fr;padding-block:24px}
+.info>div{padding:4px 28px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.info>div:first-child{padding-left:0;border-left:0}
+.info .label{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.info h2{font-size:26px}
+.info .slot{font:700 20px/1.25 var(--display);text-transform:uppercase;font-variant-numeric:tabular-nums}
+.info .slot small{display:block;font:500 15px/1.4 var(--body);text-transform:none;color:var(--muted)}
+.info .today .label{color:var(--red)}
+.info .today .label::after{content:"Aujourd’hui";display:inline-block;margin-left:8px;padding:3px 6px;background:var(--red);color:var(--on-red);font-size:10px;letter-spacing:.08em;vertical-align:1px}
+.info address{font-style:normal;font-size:15px;line-height:1.45}
+.info address a{color:var(--red);font-weight:600;text-decoration:none}
 .status{display:inline-flex;align-items:center;gap:8px;font:600 13px var(--body);letter-spacing:.06em;text-transform:uppercase}
 .status i{width:10px;height:10px;border-radius:50%;background:var(--off)}
 .status.open i{background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 22%,transparent)}
-.hours{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
-.hours td{padding:7px 0;border-bottom:1px solid var(--line)}
-.hours td:last-child{text-align:right;color:var(--muted)}
-.hours tr.today td{font-weight:700;color:var(--ink)}
-.hours tr.today td:first-child{box-shadow:inset 3px 0 0 var(--red);padding-left:10px}
-.hoursCard address{font-style:normal;margin-top:14px;font-size:15px;line-height:1.5}
+@media (max-width:980px){.info{grid-template-columns:1fr 1fr;gap:20px 0}.info>div:nth-child(3){padding-left:0;border-left:0}}
+@media (max-width:520px){.info{grid-template-columns:1fr;gap:0}.info>div,.info>div:nth-child(3){padding:14px 0;border-left:0;border-top:1px solid var(--line)}.info>div:first-child{border-top:0;padding-top:0}}
 
 /* Sections */
 section{padding-block:88px}
@@ -399,19 +393,12 @@ footer .credits a{color:inherit}
 
   <div class="infobar">
     <div class="wrap">
-      <aside class="hoursCard" aria-label="Horaires et adresse">
-        <div class="hd"><h2>Horaires</h2><span class="status" id="status"><i></i><span>—</span></span></div>
-        <table class="hours" id="hours"><tbody>
-          <tr data-d="1"><td>Lundi</td><td>8h–12h · 14h–18h30</td></tr>
-          <tr data-d="2"><td>Mardi</td><td>8h–12h · 14h–18h30</td></tr>
-          <tr data-d="3"><td>Mercredi</td><td>8h–12h · 14h–18h30</td></tr>
-          <tr data-d="4"><td>Jeudi</td><td>8h–12h · 14h–18h30</td></tr>
-          <tr data-d="5"><td>Vendredi</td><td>8h–12h · 14h–18h30</td></tr>
-          <tr data-d="6"><td>Samedi</td><td>Fermé</td></tr>
-          <tr data-d="0"><td>Dimanche</td><td>Fermé</td></tr>
-        </tbody></table>
-        <address>120 avenue de la Clastre, 34980 Saint-Clément-de-Rivière</address>
-      </aside>
+      <div class="info" aria-label="Horaires et adresse">
+        <div><h2>Horaires</h2><span class="status" id="status"><i></i><span>—</span></span></div>
+        <div data-days="1 2 3 4 5"><span class="label">Lundi – vendredi</span><span class="slot">8h – 12h<br>14h – 18h30</span></div>
+        <div data-days="6 0"><span class="label">Samedi – dimanche</span><span class="slot">Fermé<small>Réouverture lundi 8h</small></span></div>
+        <div><span class="label">Adresse</span><address>120 avenue de la Clastre<br>34980 Saint-Clément-de-Rivière<br><a href="https://www.google.com/maps/search/?api=1&query=120+avenue+de+la+Clastre+34980+Saint-Cl%C3%A9ment-de-Rivi%C3%A8re" target="_blank" rel="noopener">Itinéraire ↗</a></address></div>
+      </div>
     </div>
   </div>
 
@@ -739,7 +726,7 @@ footer .credits a{color:inherit}
     var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
     var get=function(t){return (parts.find(function(p){return p.type===t})||{}).value};
     var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[get('weekday')], m=parseInt(get('hour'),10)*60+parseInt(get('minute'),10);
-    var row=document.querySelector('#hours tr[data-d="'+d+'"]'); if(row) row.className='today';
+    document.querySelectorAll('[data-days]').forEach(function(c){if(c.dataset.days.split(' ').indexOf(String(d))>=0)c.classList.add('today')});
     var open=d>=1&&d<=5&&((m>=480&&m<720)||(m>=840&&m<1110));
     var s=document.getElementById('status'); s.classList.toggle('open',open);
     s.querySelector('span').textContent=open?(m<720?'Ouvert jusqu’à 12h':'Ouvert jusqu’à 18h30'):(d>=1&&d<=5&&m>=720&&m<840?'Réouvre à 14h':'Fermé');
