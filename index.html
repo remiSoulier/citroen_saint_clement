@@ -101,20 +101,33 @@ section{padding-block:88px}
 @media (max-width:800px){section{padding-block:60px}}
 
 /* Gamme */
-.range{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:-12px 0 28px}
+.filters button{font:600 13px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.filters button:hover{border-color:var(--red)}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.range{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.model[hidden]{display:none}
+.badge{position:absolute;top:10px;left:10px;background:var(--red);color:var(--on-red);font:700 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px}
+.energy{display:flex;flex-wrap:wrap;gap:5px;margin:2px 0 6px;padding:0;list-style:none}
+.energy li{font:600 10.5px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:5px 6px;border:1px solid var(--line);background:var(--bg);color:var(--muted)}
+.energy li.e{background:var(--tint);border-color:var(--tint);color:var(--red-dark)}
+.range-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 32px;margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:15px}
+.range-foot p{margin:0;max-width:44em}
+.range-foot b{font:700 17px var(--display);text-transform:uppercase;margin-right:8px}
+.range-foot .legal{font-size:13px;color:var(--muted)}
 .model{background:var(--soft);display:flex;flex-direction:column}
-.model .img{aspect-ratio:4/3;overflow:hidden;background:var(--line);position:relative}
-.model .img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.model .img{aspect-ratio:16/9;overflow:hidden;background:var(--bg);position:relative}
+.model .img img{position:relative;width:100%;height:100%;object-fit:contain;padding:6px;transition:transform .4s}
 .model:hover .img img{transform:scale(1.04)}
 .model .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
-.model h3{font-size:26px}
+.model h3{font-size:24px}
 .model p{margin:0;color:var(--muted);font-size:15px;flex:1}
 .model a{font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--red);margin-top:8px}
-.model small{font-size:10.5px;color:var(--muted);line-height:1.3}
-.model small a{font-size:inherit;letter-spacing:0;text-transform:none;color:inherit;text-decoration:underline;margin:0}
+.model .img:has(img) .fallback{display:none}
 .fallback{position:absolute;inset:0;display:grid;place-items:center;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:13px}
-@media (max-width:1000px){.range{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.range{grid-template-columns:1fr}}
+@media (max-width:1180px){.range{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:860px){.range{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.range{grid-template-columns:1fr}.filters{gap:6px}.filters button{font-size:12px;padding:9px 10px}}
 
 /* Services */
 .services{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
@@ -255,25 +268,61 @@ footer .credits a{color:inherit}
     <div class="wrap">
       <div class="sec-head">
         <div><span class="kicker">Véhicules neufs</span><h2>La gamme Citroën</h2></div>
-        <p>Essais sur rendez-vous, reprise de votre véhicule et solutions de financement. Occasions toutes marques et utilitaires également disponibles.</p>
+        <p>Toute la gamme Citroën, en thermique, hybride ou 100 % électrique. Essais sur rendez-vous, reprise de votre véhicule et solutions de financement.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer la gamme">
+        <button type="button" data-f="" aria-pressed="true">Tous</button>
+        <button type="button" data-f="elec" aria-pressed="false">Électriques</button>
+        <button type="button" data-f="hyb" aria-pressed="false">Hybrides</button>
+        <button type="button" data-f="ville" aria-pressed="false">Citadines</button>
+        <button type="button" data-f="fam" aria-pressed="false">7 places et plus</button>
+        <button type="button" data-f="pro" aria-pressed="false">Professionnels</button>
       </div>
       <div class="range">
-        <article class="model">
-          <div class="img"><span class="fallback">Citroën C3</span><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Citro%C3%ABn_C3_(4th_generation)_DSC_7101.jpg?width=800" alt="Citroën C3" onerror="this.remove()"></div>
-          <div class="body"><h3>C3 · ë-C3</h3><p>La citadine, en thermique, hybride ou 100 % électrique.</p><a href="#contact">Demander un essai →</a><small>Photo <a href="https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_C3_(4th_generation)_DSC_7101.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></small></div>
+        <article class="model" data-tags="elec ville">
+          <div class="img"><span class="fallback">Citroën Ami</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/ami/bbc/all-new-ami_576x324.png" alt="Citroën Ami" onerror="this.remove()"></div>
+          <div class="body"><h3>Ami</h3><ul class="energy" aria-label="Motorisations"><li class="e">Électrique</li></ul><p>Le quadricycle 100 % électrique, 2 places. Accessible dès 14 ans avec le permis AM.</p><a href="#contact" data-model="Citroën Ami">Demander un essai →</a></div>
         </article>
-        <article class="model">
-          <div class="img"><span class="fallback">Citroën C3 Aircross</span><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Citro%C3%ABn_C3_Aircross_(2024)_Auto_Zuerich_2024_DSC_6646.jpg?width=800" alt="Citroën C3 Aircross" onerror="this.remove()"></div>
-          <div class="body"><h3>C3 Aircross</h3><p>Le SUV familial, jusqu'à 7 places.</p><a href="#contact">Demander un essai →</a><small>Photo <a href="https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_C3_Aircross_(2024)_Auto_Zuerich_2024_DSC_6646.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></small></div>
+        <article class="model" data-tags="elec hyb ville">
+          <div class="img"><span class="fallback">Citroën C3</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-c3-2023/bbc/new-C3-ICE-carpicker.png" alt="Citroën C3" onerror="this.remove()"></div>
+          <div class="body"><h3>C3</h3><ul class="energy" aria-label="Motorisations"><li>Essence</li><li>Hybride</li><li class="e">Électrique</li></ul><p>La citadine confortable et bien équipée, aussi en ë-C3 100 % électrique.</p><a href="#contact" data-model="Citroën C3">Demander un essai →</a></div>
         </article>
-        <article class="model">
-          <div class="img"><span class="fallback">Citroën C4</span><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Citroen_C4_(2020)_Auto_Zuerich_2021_IMG_0257.jpg?width=800" alt="Citroën C4" onerror="this.remove()"></div>
-          <div class="body"><h3>C4 · ë-C4</h3><p>La compacte au confort Citroën, aussi en électrique.</p><a href="#contact">Demander un essai →</a><small>Photo <a href="https://commons.wikimedia.org/wiki/File:Citroen_C4_(2020)_Auto_Zuerich_2021_IMG_0257.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></small></div>
+        <article class="model" data-tags="elec hyb fam">
+          <div class="img"><span class="fallback">Citroën C3 Aircross</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-c3-aircross/bbc/Car_Picker_1CSJ_ICE.png" alt="Citroën C3 Aircross" onerror="this.remove()"></div>
+          <div class="body"><h3>C3 Aircross</h3><ul class="energy" aria-label="Motorisations"><li>Essence</li><li>Hybride</li><li class="e">Électrique</li></ul><p>Le SUV compact et spacieux, jusqu'à 7 places. Aussi en ë-C3 Aircross.</p><a href="#contact" data-model="Citroën C3 Aircross">Demander un essai →</a></div>
         </article>
-        <article class="model">
-          <div class="img"><span class="fallback">Citroën C5 X</span><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Citro%C3%ABn_C5_X_1X7A1546.jpg?width=800" alt="Citroën C5 X" onerror="this.remove()"></div>
-          <div class="body"><h3>C5 X</h3><p>La grande routière, en hybride rechargeable.</p><a href="#contact">Demander un essai →</a><small>Photo <a href="https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_C5_X_1X7A1546.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></small></div>
+        <article class="model" data-tags="elec hyb">
+          <div class="img"><span class="fallback">Citroën C4</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-c4-2024/bbc-cards/1CLEA5_ICE_new.png" alt="Citroën C4" onerror="this.remove()"></div>
+          <div class="body"><h3>C4</h3><ul class="energy" aria-label="Motorisations"><li>Essence</li><li>Hybride</li><li class="e">Électrique</li></ul><p>La compacte au confort Citroën, aussi en ë-C4 électrique.</p><a href="#contact" data-model="Citroën C4">Demander un essai →</a></div>
         </article>
+        <article class="model" data-tags="elec hyb">
+          <div class="img"><span class="fallback">Citroën C4 X</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-c4-x-2024/bbc/1CLPA4_ICE_new.png" alt="Citroën C4 X" onerror="this.remove()"></div>
+          <div class="body"><h3>C4 X</h3><ul class="energy" aria-label="Motorisations"><li>Essence</li><li>Hybride</li><li class="e">Électrique</li></ul><p>La berline au style fastback et au grand coffre, aussi en ë-C4 X.</p><a href="#contact" data-model="Citroën C4 X">Demander un essai →</a></div>
+        </article>
+        <article class="model" data-tags="elec hyb">
+          <div class="img"><span class="fallback">Citroën C5 Aircross</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-c5-aircross-2025/launch/trims-/C5-aircross_max_side.webp" alt="Citroën C5 Aircross" onerror="this.remove()"><span class="badge">Nouveau</span></div>
+          <div class="body"><h3>C5 Aircross</h3><ul class="energy" aria-label="Motorisations"><li>Hybride</li><li>Hybride rechargeable</li><li class="e">Électrique</li></ul><p>Le nouveau SUV familial, très spacieux, aussi en ë-C5 Aircross électrique.</p><a href="#contact" data-model="Citroën C5 Aircross">Demander un essai →</a></div>
+        </article>
+        <article class="model" data-tags="hyb">
+          <div class="img"><span class="fallback">Citroën C5 X</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/c5-x/bbc/C5X-ICE-576x324.png" alt="Citroën C5 X" onerror="this.remove()"></div>
+          <div class="body"><h3>C5 X</h3><ul class="energy" aria-label="Motorisations"><li>Hybride</li><li>Hybride rechargeable</li></ul><p>La grande routière, entre berline et SUV, pour les longs trajets.</p><a href="#contact" data-model="Citroën C5 X">Demander un essai →</a></div>
+        </article>
+        <article class="model" data-tags="elec fam">
+          <div class="img"><span class="fallback">Citroën Berlingo</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-%C3%AB-berlingo---berlingo/bbc-thumbnails/new-Berlingo-ICE-B2C-576x324.png" alt="Citroën Berlingo" onerror="this.remove()"></div>
+          <div class="body"><h3>Berlingo</h3><ul class="energy" aria-label="Motorisations"><li>Diesel</li><li class="e">Électrique</li></ul><p>Le ludospace familial, 5 ou 7 places, en deux longueurs. Aussi en ë-Berlingo.</p><a href="#contact" data-model="Citroën Berlingo">Demander un essai →</a></div>
+        </article>
+        <article class="model" data-tags="elec fam pro">
+          <div class="img"><span class="fallback">Citroën SpaceTourer</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/master/b2c/models/new-%C3%AB-spacetourer---spacetourer/bbc-thumbnails/new-SpaceTourer-ICE-756x324.png" alt="Citroën SpaceTourer" onerror="this.remove()"></div>
+          <div class="body"><h3>SpaceTourer</h3><ul class="energy" aria-label="Motorisations"><li>Diesel</li><li class="e">Électrique</li></ul><p>Le monospace jusqu'à 9 places, pour les grandes familles et le transport de personnes. Existe aussi en Jumpy Combi.</p><a href="#contact" data-model="Citroën SpaceTourer">Demander un essai →</a></div>
+        </article>
+        <article class="model" data-tags="elec pro">
+          <div class="img"><span class="fallback">Citroën Jumpy</span><img loading="lazy" src="https://www.citroen.fr/content/dam/citroen/france/menu-cards-white/jumpy_carpicker_2025.png" alt="Citroën Jumpy, utilitaire" onerror="this.remove()"></div>
+          <div class="body"><h3>Utilitaires</h3><ul class="energy" aria-label="Motorisations"><li>Diesel</li><li class="e">Électrique</li></ul><p>Berlingo Van, Jumpy et Jumper : fourgonnettes et fourgons pour les professionnels, aussi en électrique.</p><a href="#contact" data-model="Citroën Jumpy">Demander un essai →</a></div>
+        </article>
+      </div>
+      <div class="range-foot">
+        <p><b>Occasions toutes marques</b> Véhicules récents et utilitaires, révisés dans notre atelier. Demandez-nous le stock disponible.</p>
+        <p class="legal">Pour les trajets courts, privilégiez la marche ou le vélo. #SeDéplacerMoinsPolluer</p>
       </div>
     </div>
   </section>
@@ -408,7 +457,7 @@ footer .credits a{color:inherit}
       <span><b>SARL St Clément Automobile</b> · Agent Citroën · 120 av. de la Clastre, 34980 Saint-Clément-de-Rivière · 04 67 84 09 24</span>
       <span><a href="https://www.instagram.com/citroen_auto_stclement/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/severine.grabouillat.5" target="_blank" rel="noopener">Facebook</a> · SIREN 321 354 227 · Mentions légales</span>
     </div>
-    <p class="credits">Photos du garage : Saint Clément Automobile. Photos des modèles : Wikimedia Commons, sous licences libres (auteurs et licences sur chaque page liée). Logo et marque Citroën : Stellantis.</p>
+    <p class="credits">Photos du garage : Saint Clément Automobile. Visuels des modèles et logo Citroën : © Citroën / Stellantis.</p>
   </div>
 </footer>
 
@@ -429,6 +478,21 @@ footer .credits a{color:inherit}
       var done=function(){b.textContent='Copié';setTimeout(function(){b.textContent='Copier'},1500)};
       var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)};
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(el.textContent).then(done,sel)}else sel();
+    });
+  });
+  var filters=document.querySelectorAll('.filters button');
+  filters.forEach(function(b){
+    b.addEventListener('click',function(){
+      filters.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+      document.querySelectorAll('.model').forEach(function(m){
+        m.hidden=!!b.dataset.f&&m.dataset.tags.split(' ').indexOf(b.dataset.f)<0;
+      });
+    });
+  });
+  document.querySelectorAll('[data-model]').forEach(function(a){
+    a.addEventListener('click',function(){
+      document.getElementById('f-subject').value='Essai d\'un véhicule neuf';
+      document.getElementById('f-msg').value='Je souhaite essayer : '+a.dataset.model+'.';
     });
   });
   document.getElementById('form').addEventListener('submit',function(e){
