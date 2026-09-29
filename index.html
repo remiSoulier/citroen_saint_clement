@@ -242,6 +242,20 @@ section{padding-block:88px}
 .faq details a{color:var(--red);font-weight:600}
 @media (max-width:860px){.faq{grid-template-columns:1fr;gap:20px}}
 
+/* Popup portes ouvertes */
+.promo{border:0;padding:0;max-width:min(520px,calc(100% - 32px));width:100%;background:var(--bg);color:var(--ink);box-shadow:0 24px 60px rgba(15,46,54,.25)}
+.promo::backdrop{background:rgba(15,46,54,.55)}
+.promo .top{background:var(--red);color:var(--on-red);padding:26px 28px 22px;position:relative}
+.promo .top .kicker{color:var(--on-red);opacity:.85}
+.promo h2{font-size:clamp(34px,7vw,46px);margin-top:10px}
+.promo .dates{display:flex;gap:10px;margin-top:16px}
+.promo .dates span{background:var(--on-red);color:var(--red);padding:8px 12px;text-align:center;font:700 13px/1.1 var(--body);letter-spacing:.06em;text-transform:uppercase}
+.promo .dates b{display:block;font:800 30px/1 var(--display)}
+.promo .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;background:transparent;color:var(--on-red);font:400 28px/1 var(--body);cursor:pointer}
+.promo .body{padding:22px 28px 26px}
+.promo .body p{margin:0 0 18px;color:var(--muted)}
+.promo address{font-style:normal;font-weight:600;margin-bottom:20px}
+
 /* Contact */
 .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px}
 .coords dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:16px 24px}
@@ -709,6 +723,23 @@ footer .credits a{color:inherit}
   </section>
 </main>
 
+<dialog class="promo" id="promo" aria-labelledby="promo-title">
+  <div class="top">
+    <span class="kicker">Événement au garage</span>
+    <h2 id="promo-title">Portes ouvertes</h2>
+    <div class="dates"><span>Samedi<b>10</b>octobre</span><span>Dimanche<b>11</b>octobre</span></div>
+    <button class="x" type="button" aria-label="Fermer" data-close>×</button>
+  </div>
+  <div class="body">
+    <p>Venez découvrir la gamme Citroën et rencontrer l'équipe au garage.</p>
+    <address>120 avenue de la Clastre, Saint-Clément-de-Rivière</address>
+    <div class="actions">
+      <a class="btn red" href="#gamme" data-close>Voir la gamme</a>
+      <button class="btn" type="button" data-close>Fermer</button>
+    </div>
+  </div>
+</dialog>
+
 <footer>
   <div class="wrap">
     <img class="flogo" src="assets/img/logo-header.png" alt="Citroën · St Clement Auto">
@@ -722,6 +753,15 @@ footer .credits a{color:inherit}
 
 <script>
 (function(){
+  var promo=document.getElementById('promo');
+  if(promo&&promo.showModal&&Date.now()<Date.parse('2026-10-12T00:00:00+02:00')){
+    var seen=false; try{seen=sessionStorage.getItem('promo-po-2026')==='1'}catch(e){}
+    if(!seen){
+      promo.showModal();
+      try{sessionStorage.setItem('promo-po-2026','1')}catch(e){}
+      promo.addEventListener('click',function(e){if(e.target===promo||e.target.closest('[data-close]'))promo.close()});
+    }
+  }
   try{
     var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
     var get=function(t){return (parts.find(function(p){return p.type===t})||{}).value};
