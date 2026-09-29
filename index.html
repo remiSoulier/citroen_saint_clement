@@ -177,7 +177,13 @@ section{padding-block:88px}
 .claim{background:var(--soft)}
 .claim .wrap{padding-block:72px}
 .claim .sec-head{margin-bottom:32px}
-.law{display:inline-block;margin-top:12px;font-size:14px;color:var(--muted)}
+.know{margin-top:16px;background:var(--bg);border-left:4px solid var(--red);padding:22px 24px}
+.know h3{font-size:22px;margin-bottom:12px}
+.know ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 32px}
+.know li{font-size:15px;color:var(--muted)}
+.know b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+.know small{display:block;margin-top:6px;font-size:12.5px}
+@media (max-width:760px){.know ul{grid-template-columns:1fr}}
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
 .steps li{background:var(--bg);padding:24px 22px 26px;border-top:4px solid var(--red);counter-increment:step}
 .steps li::before{content:counter(step,decimal-leading-zero);display:block;font:800 44px/1 var(--display);color:var(--red);margin-bottom:14px}
@@ -312,7 +318,7 @@ footer .credits a{color:inherit}
    "name": "Mon assurance me propose un autre garage. Puis-je quand même venir chez vous ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Oui. Vous avez le libre choix du réparateur : l'expert de votre assurance vient au garage et la prise en charge se fait de la même façon. Voir comment ça se passe."
+    "text": "Oui. Choisir votre réparateur est un droit : votre assureur peut vous conseiller un garage, mais il doit vous laisser libre de votre choix et vous le rappeler par écrit. L'expert de votre assurance vient au garage et la prise en charge se fait de la même façon. Voir comment ça se passe."
    }
   },
   {
@@ -539,8 +545,8 @@ footer .credits a{color:inherit}
   <section id="carrosserie" class="claim" style="padding:0">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="kicker">Carrosserie après sinistre</span><h2>Votre assurance ne vous impose pas son garage</h2></div>
-        <p>Après un accident, c'est vous qui choisissez le réparateur, même si votre assurance vous en propose un autre. Confiez-nous votre voiture : la prise en charge par l'assurance se fait de la même façon.<br><span class="law">Libre choix du réparateur : article L211-5-1 du Code des assurances.</span></p>
+        <div><span class="kicker">Carrosserie après sinistre</span><h2>Choisir votre réparateur, c'est votre droit</h2></div>
+        <p>Votre assureur peut vous conseiller un garage, mais il doit vous laisser choisir librement votre réparateur. Confiez-nous votre voiture : la prise en charge par l'assurance se fait de la même façon.</p>
       </div>
       <ol class="steps">
         <li><h3>Vous déclarez le sinistre</h3><p>Prévenez votre assurance et indiquez-lui que vous faites réparer chez St Clément Automobile.</p></li>
@@ -548,6 +554,13 @@ footer .credits a{color:inherit}
         <li><h3>Nous réparons</h3><p>Tôlerie, peinture, pare-brise, optiques : tout est fait dans notre atelier, et l'expert suit les travaux.</p></li>
         <li><h3>Vous gardez la mobilité</h3><p>Un véhicule de courtoisie vous est prêté pendant les travaux, sur réservation. Les réparations sont prises en charge selon votre contrat.</p></li>
       </ol>
+      <aside class="know" aria-labelledby="know-title">
+        <h3 id="know-title">Le saviez-vous ?</h3>
+        <ul>
+          <li><b>C'est écrit dans votre contrat.</b> Tout contrat d'assurance auto doit mentionner votre droit de choisir le réparateur en cas de dommage garanti.<small>Loi du 17 mars 2014 relative à la consommation, article 63 · Code des assurances, article L211-5-1</small></li>
+          <li><b>Votre assureur doit vous le rappeler.</b> Dès votre déclaration de sinistre, il doit vous informer clairement de ce droit. Si vous déclarez par téléphone, il doit vous le confirmer au plus vite par écrit, par email ou SMS.<small>Arrêté du 17 juin 2016</small></li>
+        </ul>
+      </aside>
       <div class="actions">
         <a class="btn red" href="#contact" data-subject="Carrosserie">Demander un devis carrosserie</a>
         <span>ou appelez le <a href="tel:+33467840924">04 67 84 09 24</a></span>
@@ -658,7 +671,7 @@ footer .credits a{color:inherit}
         </details>
         <details>
           <summary>Mon assurance me propose un autre garage. Puis-je quand même venir chez vous ?</summary>
-          <p>Oui. Vous avez le libre choix du réparateur : l'expert de votre assurance vient au garage et la prise en charge se fait de la même façon. <a href="#carrosserie">Voir comment ça se passe</a>.</p>
+          <p>Oui. Choisir votre réparateur est un droit : votre assureur peut vous conseiller un garage, mais il doit vous laisser libre de votre choix et vous le rappeler par écrit. L'expert de votre assurance vient au garage et la prise en charge se fait de la même façon. <a href="#carrosserie">Voir comment ça se passe</a>.</p>
         </details>
         <details>
           <summary>Puis-je avoir une voiture pendant les réparations ?</summary>
