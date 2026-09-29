@@ -45,11 +45,11 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;g
 footer .flogo{height:64px;width:auto}
 .brand b{display:block;font:700 19px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
 .brand small{display:block;font:500 12px/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-nav.menu{display:flex;gap:28px}
-nav.menu a{text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding-block:24px;border-bottom:3px solid transparent}
+nav.menu{display:flex;gap:22px}
+nav.menu a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding-block:24px;border-bottom:3px solid transparent}
 nav.menu a:hover{border-color:var(--red)}
 .tel{font:700 16px/1 var(--body);letter-spacing:.03em;text-decoration:none;white-space:nowrap;padding:12px 16px;background:var(--red);color:var(--on-red)}
-@media (max-width:940px){nav.menu{display:none}}
+@media (max-width:1120px){nav.menu{display:none}}
 @media (max-width:460px){.brand img{height:40px}.tel{padding:10px 11px;font-size:14px}}
 
 /* Hero photo */
@@ -149,7 +149,7 @@ section{padding-block:88px}
 .svc{padding:32px 26px 32px 0;border-right:1px solid var(--line)}
 .svc + .svc{padding-left:26px}
 .svc:last-child{border-right:0}
-.svc svg{width:40px;height:40px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.svc svg{width:40px;height:40px;stroke:var(--red);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
 .svc h3{font-size:24px;margin-bottom:10px}
 .svc p{margin:0 0 12px;color:var(--muted);font-size:16px}
 .svc p a{color:var(--red);font-weight:600;text-decoration:none}
@@ -204,7 +204,7 @@ section{padding-block:88px}
 /* Équipe */
 .team{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none;margin:0;padding:0}
 .member{border:1px solid var(--line);padding:24px 20px 22px;display:flex;flex-direction:column;gap:8px}
-.member svg{width:40px;height:40px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.member svg{width:40px;height:40px;stroke:var(--red);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
 .member b{font:800 44px/1 var(--display);color:var(--red)}
 .member h3{font-size:22px}
 .member p{margin:0;color:var(--muted);font-size:15px}
@@ -499,22 +499,22 @@ footer .credits a{color:inherit}
       </div>
       <div class="services">
         <article class="svc">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M11 37l4-4M33 15l4-4"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v6"/><path d="M12 5v3"/><path d="M10 5h4"/><path d="M5 13h-2"/><path d="M6 10h2l2 -2h3.382a1 1 0 0 1 .894 .553l1.448 2.894a1 1 0 0 0 .894 .553h1.382v-2h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2v-2h-3v2a1 1 0 0 1 -1 1h-3.465a1 1 0 0 1 -.832 -.445l-1.703 -2.555h-2v-6"/></svg>
           <h3>Mécanique</h3><p>Toute la maintenance des véhicules particuliers et utilitaires légers.</p>
           <ul><li>Vidange</li><li>Freins, pneus</li><li>Distribution</li><li>Climatisation</li><li>Batterie, échappement</li><li>Dépannage</li></ul>
         </article>
         <article class="svc">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="12" width="32" height="22" rx="2"/><path d="M14 40h20M24 34v6M14 23h5l3-5 4 10 3-5h5"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1l0 -10"/><path d="M7 20h10"/><path d="M9 16v4"/><path d="M15 16v4"/><path d="M9 12v-4"/><path d="M12 12v-1"/><path d="M15 12v-2"/><path d="M12 12v-1"/></svg>
           <h3>Diagnostic</h3><p>Diagnostic électronique et recherche de panne.</p>
           <ul><li>Voyants allumés</li><li>Campagnes de modernisation Citroën</li><li>Modèles électriques Citroën</li></ul>
         </article>
         <article class="svc">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h14v10H14z"/><path d="M21 18v6c0 2-2 3-4 3h-1v13h10V27"/><path d="M34 12c3 2 5 5 5 9"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/><path d="M7 6l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-5m0 -6h8m-6 0v-5m2 0h-4"/><path d="M14 8v-2"/><path d="M19 12h2"/><path d="M17.5 15.5l1.5 1.5"/><path d="M17.5 8.5l1.5 -1.5"/></svg>
           <h3>Carrosserie</h3><p>Remise en état après un accrochage ou un sinistre, avec le libre choix du réparateur. <a href="#carrosserie">Comment ça se passe →</a></p>
           <ul><li>Tôlerie : redressage, remplacement</li><li>Peinture</li><li>Pare-brise</li><li>Optiques</li></ul>
         </article>
         <article class="svc">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30l4-10c1-3 3-4 6-4h16c3 0 5 1 6 4l4 10"/><rect x="4" y="30" width="40" height="8" rx="2"/><circle cx="13" cy="38" r="3"/><circle cx="35" cy="38" r="3"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0"/><path d="M15 9h.01"/></svg>
           <h3>Vente</h3><p>Véhicules neufs Citroën et occasions toutes marques.</p>
           <ul><li>Neufs Citroën</li><li>Occasions toutes marques</li></ul>
         </article>
@@ -587,11 +587,11 @@ footer .credits a{color:inherit}
         <p>Une entreprise familiale à taille humaine, de l'atelier à l'accueil.</p>
       </div>
       <ul class="team">
-        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="7"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M11 37l4-4M33 15l4-4"/></svg><b>3</b><h3>Mécaniciens</h3><p>Entretien, réparation et diagnostic de votre véhicule.</p></li>
-        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18l18-8 18 8-18 8z"/><path d="M14 22v9c0 3 5 6 10 6s10-3 10-6v-9"/><path d="M42 18v10"/></svg><b>1</b><h3>Apprenti</h3><p>Formé chez nous aux métiers de l'atelier.</p></li>
-        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h14v10H14z"/><path d="M21 18v6c0 2-2 3-4 3h-1v13h10V27"/><path d="M34 12c3 2 5 5 5 9"/></svg><b>1</b><h3>Carrossier-peintre</h3><p>Tôlerie, redressage et peinture.</p></li>
-        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="7"/><path d="M10 40c0-8 6-13 14-13s14 5 14 13"/><path d="M8 40h32"/></svg><b>1</b><h3>Réceptionnaire</h3><p>Vous accueille et organise les interventions.</p></li>
-        <li class="member"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="2"/><path d="M16 16h16M16 23h16M16 30h10"/></svg><b>1</b><h3>Secrétaire</h3><p>Rendez-vous, devis et suivi administratif.</p></li>
+        <li class="member"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"/></svg><b>3</b><h3>Mécaniciens</h3><p>Entretien, réparation et diagnostic de votre véhicule.</p></li>
+        <li class="member"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/></svg><b>1</b><h3>Apprenti</h3><p>Formé chez nous aux métiers de l'atelier.</p></li>
+        <li class="member"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2l0 -7"/><path d="M6 10v-4a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4"/><path d="M15 7h.01"/><path d="M18 9h.01"/><path d="M18 5h.01"/><path d="M21 3h.01"/><path d="M21 7h.01"/><path d="M21 11h.01"/><path d="M10 7h1"/></svg><b>1</b><h3>Carrossier-peintre</h3><p>Tôlerie, redressage et peinture.</p></li>
+        <li class="member"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-3a8 8 0 1 1 16 0v3"/><path d="M18 19c0 1.657 -2.686 3 -6 3"/><path d="M4 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3"/><path d="M15 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3"/></svg><b>1</b><h3>Réceptionnaire</h3><p>Vous accueille et organise les interventions.</p></li>
+        <li class="member"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"/><path d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2"/><path d="M9 12l.01 0"/><path d="M13 12l2 0"/><path d="M9 16l.01 0"/><path d="M13 16l2 0"/></svg><b>1</b><h3>Secrétaire</h3><p>Rendez-vous, devis et suivi administratif.</p></li>
       </ul>
     </div>
   </section>
@@ -716,7 +716,7 @@ footer .credits a{color:inherit}
       <span><b>SARL St Clément Automobile</b> · Réparateur agréé Citroën · 120 av. de la Clastre, 34980 Saint-Clément-de-Rivière · 04 67 84 09 24 · <a href="mailto:citroen.st.clement@gmail.com">citroen.st.clement@gmail.com</a></span>
       <span><a href="https://www.instagram.com/citroen_auto_stclement/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/severine.grabouillat.5" target="_blank" rel="noopener">Facebook</a> · <a href="mentions-legales.html">Mentions légales</a></span>
     </div>
-    <p class="credits">Photos du garage : Saint Clément Automobile. Visuels des modèles et logo Citroën : © Citroën / Stellantis.</p>
+    <p class="credits">Photos du garage : Saint Clément Automobile. Visuels des modèles et logo Citroën : © Citroën / Stellantis. Icônes : <a href="https://tabler.io/icons" target="_blank" rel="noopener">Tabler Icons</a> (licence MIT).</p>
   </div>
 </footer>
 
