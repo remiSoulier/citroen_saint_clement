@@ -9,6 +9,10 @@ Site vitrine du garage Citroën St Clément Automobile, 120 avenue de la Clastre
 - `robots.txt`, `sitemap.xml` : référencement
 - `assets/img/` : logo et photos du garage
 
+## En ligne
+
+https://saintclementautomobile.com, hébergé chez OVH (domaine et hébergement).
+
 ## Aperçu local
 
 Ouvrir `index.html` dans un navigateur, ou lancer `python3 -m http.server` puis aller sur http://localhost:8000.
@@ -17,6 +21,5 @@ Ouvrir `index.html` dans un navigateur, ou lancer `python3 -m http.server` puis 
 
 - Appliquer la charte Citroën pour le logo et les visuels des modèles (règles imposées par la marque)
 - Logo en SVG ou PNG haute définition
-- Acheter le domaine stclementautomobile.com et le relier à Vercel (déjà déclaré dans les balises SEO, robots.txt et sitemap.xml)
 - Déclarer le site dans Google Search Console et envoyer le sitemap
 - Fiche Google : mettre le nouveau site web et corriger la fermeture à 18h30
